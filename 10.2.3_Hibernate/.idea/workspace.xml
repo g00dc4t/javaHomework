@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2767c163-637e-4ef8-874d-72cd72afd4c4" name="Default Changelist" comment="added all classes">
+      <change afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/.idea/10.2.4_Hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/10.2.3_Hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/10.2.3_Hibernate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/src/main/java/LinkedPurchaseListID.java" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/src/main/java/LinkedPurchaseListID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/PurchaseList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/PurchaseList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/SubscriptionID.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/SubscriptionID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../10.2.4_Hibernate/target/classes/hibernate.cfg.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\kali\arh\f\IntelliJ IDEA Community Edition 2020.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kxiyeNYnuiuyhsxp0gC4YUxNLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.22988506" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="10.2.3_Hibernate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.sun.tools.javac.launcher.Main" />
+      <module name="10.2.3_Hibernate" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2767c163-637e-4ef8-874d-72cd72afd4c4" name="Default Changelist" comment="" />
+      <created>1606648899970</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606648899970</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added all classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all classes" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606649466135">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606649466135" />
+    <state x="285" y="207" key="#com.intellij.ide.util.MemberChooser" timestamp="1608896831753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="285" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608896831753" />
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606649123603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606649123603" />
+    <state x="272" y="236" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608908272322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="272" y="236" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608908272322" />
+    <state x="107" y="91" key="CommitChangelistDialog2" timestamp="1606666524693">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="107" y="91" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606666524693" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608981973413">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608981973413" />
+    <state width="914" height="305" key="GridCell.Tab.0.bottom" timestamp="1608988889917">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889917" />
+    <state width="914" height="305" key="GridCell.Tab.0.center" timestamp="1608988889916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="305" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889916" />
+    <state width="914" height="305" key="GridCell.Tab.0.left" timestamp="1608988889916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="305" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889916" />
+    <state width="914" height="305" key="GridCell.Tab.0.right" timestamp="1608988889916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="305" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889916" />
+    <state width="914" height="229" key="GridCell.Tab.1.bottom" timestamp="1608988889912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="229" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889912" />
+    <state width="914" height="229" key="GridCell.Tab.1.center" timestamp="1608988889912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="229" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889912" />
+    <state width="914" height="229" key="GridCell.Tab.1.left" timestamp="1608988889912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="229" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889912" />
+    <state width="914" height="229" key="GridCell.Tab.1.right" timestamp="1608988889912">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="229" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608988889912" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1608989008929">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608989008929" />
+    <state x="187" y="123" width="585" height="801" key="find.popup" timestamp="1606653733230">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="187" y="123" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606653733230" />
+  </component>
+</project>

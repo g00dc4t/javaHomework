@@ -1,0 +1,2 @@
+2020-09-25 14:58:29.425 [main] ERROR  - java.lang.IllegalArgumentException: Станция не найдена: zzz
+2020-09-29 11:04:52.873 [main] ERROR  - java.lang.IllegalArgumentException: Станция не найдена: vvv

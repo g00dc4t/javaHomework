@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a613f98-d31b-4d00-91fe-539b11e2249a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YF1kBhbyKhkNYvGrxUr4JAjpCN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../module4hw5" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="module5hw3" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a613f98-d31b-4d00-91fe-539b11e2249a" name="Default Changelist" comment="" />
+      <created>1582523668216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582523668216</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="275" key="FileChooserDialogImpl" timestamp="1597651806075">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="496" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597651806075" />
+    <state width="1045" height="247" key="GridCell.Tab.0.bottom" timestamp="1594811415600">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1045" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594811415600" />
+    <state width="1045" height="247" key="GridCell.Tab.0.center" timestamp="1594811415599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1045" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594811415599" />
+    <state width="1045" height="247" key="GridCell.Tab.0.left" timestamp="1594811415599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1045" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594811415599" />
+    <state width="1045" height="247" key="GridCell.Tab.0.right" timestamp="1594811415600">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1045" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594811415600" />
+    <state x="196" y="95" key="SettingsEditor" timestamp="1594367229467">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="196" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594367229467" />
+  </component>
+</project>
