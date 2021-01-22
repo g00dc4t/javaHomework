@@ -71,6 +71,10 @@ public class Bank {
         accounts.put(account.getAccNumber(), account);
     }
 
+    public HashMap<String, Account> getBlockedAccounts() {
+        return blockedAccounts;
+    }
+
     public void blockAccounts (String fromAccountNum, String toAccountNum) {
         blockedAccounts.put(fromAccountNum, accounts.get(fromAccountNum));
         accounts.remove(fromAccountNum);

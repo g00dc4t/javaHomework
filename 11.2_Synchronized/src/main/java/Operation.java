@@ -11,11 +11,20 @@ public class Operation implements Runnable {
 
     @Override
     public void run() {
-        
+        int randValue1 = ThreadLocalRandom.current().nextInt(30);
+        int randValue2 = randValue1 + 1;
+        String toAccount = "acc" + randValue1;
+        String fromAccount = "acc" + randValue2;
+        long randTransferValue = getRandomTransferValue();
+        try {
+            bank.transfer(toAccount, fromAccount, randTransferValue);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static int getRandomTransferValue() {
-        int transferValue;
+    public static long getRandomTransferValue() {
+        long transferValue;
         int rand = (ThreadLocalRandom.current().nextInt(100) < 5) ? 1 : 0;
         if (rand == 1)  {
             transferValue = 51000;
