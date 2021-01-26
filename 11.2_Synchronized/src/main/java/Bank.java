@@ -6,7 +6,6 @@ public class Bank {
     private HashMap<String, Account> accounts;
     private HashMap<String, Account> blockedAccounts;
     private final Random random = new Random();
-    private long totalAmountMoney;
     private long accountsMoney;
     private long blockedAccountsMoney;
 
@@ -22,45 +21,46 @@ public class Bank {
     }
 
     public void transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
-        if (amount < 50000) {
-            subtractAndAddMoney(fromAccountNum, toAccountNum, amount);
+        if (!(accounts.containsKey(fromAccountNum)) || !(accounts.containsKey(toAccountNum))) {
+            throw new NullPointerException("no such account or it has been blocked");
         } else {
-            if (isFraud(fromAccountNum, toAccountNum, amount)) {
-                blockAccounts(fromAccountNum, toAccountNum);
-            } else {
+            if (amount < 50000) {
                 subtractAndAddMoney(fromAccountNum, toAccountNum, amount);
+            } else {
+                if (isFraud(fromAccountNum, toAccountNum, amount)) {
+                    blockAccounts(fromAccountNum, toAccountNum);
+                } else {
+                    subtractAndAddMoney(fromAccountNum, toAccountNum, amount);
+                }
             }
         }
     }
 
     public void subtractAndAddMoney (String fromAccountNum, String toAccountNum, long amount) {
-        accounts.get(toAccountNum).setMoney(accounts.get(toAccountNum).getMoney() + amount);
-        accounts.get(fromAccountNum).setMoney(accounts.get(fromAccountNum).getMoney() - amount);
-    }
-
-    public long getBalance(String accountNum) {
-        long balance = 0;
-        balance = accounts.get(accountNum).getMoney();
-        return balance;
+        Account fromAcc = accounts.get(fromAccountNum);
+        synchronized (fromAcc) {
+            fromAcc.setMoney(fromAcc.getMoney() - amount);
+        }
+        Account toAcc = accounts.get(toAccountNum);
+        synchronized (toAcc) {
+            toAcc.setMoney(toAcc.getMoney() + amount);
+        }
     }
 
     public long getAccountsMoney() {
+        accountsMoney = 0;
         for (String s : accounts.keySet()) {
-            accountsMoney += getBalance(s);
+            accountsMoney += accounts.get(s).getMoney();
         }
         return accountsMoney;
     }
 
     public long getBlockedAccountsMoney() {
+        blockedAccountsMoney = 0;
         for (String s : blockedAccounts.keySet()) {
-            blockedAccountsMoney += getBalance(s);
+            blockedAccountsMoney += blockedAccounts.get(s).getMoney();
         }
         return blockedAccountsMoney;
-    }
-
-    public long getTotalAmountMoney() {
-        totalAmountMoney = getAccountsMoney() + getBlockedAccountsMoney();
-        return totalAmountMoney;
     }
 
     public HashMap<String, Account> getAccounts() {

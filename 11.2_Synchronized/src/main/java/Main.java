@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Account> accountList = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 3000; i++) {
             accountList.add(new Account(100000, "acc" + i));
         }
 
@@ -13,17 +13,28 @@ public class Main {
             bank.setAccounts(account);
         }
 
-        System.out.println(bank.getTotalAmountMoney() + " total amount money before");
+        long totalBefore = bank.getAccountsMoney() + bank.getBlockedAccountsMoney();
+        System.out.println(totalBefore + " money before");
         System.out.println(bank.getAccounts().size() + " accounts before");
-        System.out.println(bank.getBlockedAccounts().size() + " block accounts before");
+        System.out.println(bank.getBlockedAccounts().size() + " block accounts before\n");
 
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 1000; i++) {
             Thread thread = new Thread(new Operation(bank));
             thread.start();
+            try {
+                thread.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        System.out.println(bank.getTotalAmountMoney() + " total amount money after");
+        long totalAfter = bank.getAccountsMoney() + bank.getBlockedAccountsMoney();
+        System.out.println("\n" + totalAfter + " money after");
         System.out.println(bank.getAccounts().size() + " accounts after");
         System.out.println(bank.getBlockedAccounts().size() + " block accounts after");
+
+        for (String s : bank.getBlockedAccounts().keySet()) {
+            System.out.println(bank.getBlockedAccounts().get(s).getAccNumber());
+        }
     }
 }
