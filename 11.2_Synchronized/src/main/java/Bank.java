@@ -21,29 +21,35 @@ public class Bank {
     }
 
     public void transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
+        Account fromAcc = accounts.get(fromAccountNum);
+        Account toAcc = accounts.get(toAccountNum);
         if (!(accounts.containsKey(fromAccountNum)) || !(accounts.containsKey(toAccountNum))) {
             throw new NullPointerException("no such account or it has been blocked");
         } else {
-            if (amount < 50000) {
-                subtractAndAddMoney(fromAccountNum, toAccountNum, amount);
+            if (fromAccountNum.compareTo(toAccountNum) > 0) {
+                synchronized (fromAcc) {
+                    synchronized (toAcc) {
+                        doTransfer(fromAcc, toAcc, amount);
+                    }
+                }
             } else {
-                if (isFraud(fromAccountNum, toAccountNum, amount)) {
-                    blockAccounts(fromAccountNum, toAccountNum);
-                } else {
-                    subtractAndAddMoney(fromAccountNum, toAccountNum, amount);
+                synchronized (toAcc) {
+                    synchronized (fromAcc) {
+                        doTransfer(fromAcc, toAcc, amount);
+                    }
                 }
             }
         }
     }
 
-    public void subtractAndAddMoney (String fromAccountNum, String toAccountNum, long amount) {
-        Account fromAcc = accounts.get(fromAccountNum);
-        synchronized (fromAcc) {
-            fromAcc.setMoney(fromAcc.getMoney() - amount);
-        }
-        Account toAcc = accounts.get(toAccountNum);
-        synchronized (toAcc) {
-            toAcc.setMoney(toAcc.getMoney() + amount);
+    public void doTransfer(Account fromAcc, Account toAcc, long amount) throws InterruptedException {
+        if (amount > 50000) {
+            if (isFraud(fromAcc.getAccNumber(), toAcc.getAccNumber(), amount)) {
+                blockAccounts(fromAcc, toAcc);
+            } else {
+                fromAcc.setMoney(fromAcc.getMoney() - amount);
+                toAcc.setMoney(toAcc.getMoney() + amount);
+            }
         }
     }
 
@@ -75,10 +81,10 @@ public class Bank {
         return blockedAccounts;
     }
 
-    public void blockAccounts (String fromAccountNum, String toAccountNum) {
-        blockedAccounts.put(fromAccountNum, accounts.get(fromAccountNum));
-        accounts.remove(fromAccountNum);
-        blockedAccounts.put(toAccountNum, accounts.get(toAccountNum));
-        accounts.remove(toAccountNum);
+    public void blockAccounts (Account fromAcc, Account toAcc) {
+        blockedAccounts.put(fromAcc.getAccNumber(), accounts.get(fromAcc.getAccNumber()));
+        accounts.remove(fromAcc.getAccNumber());
+        blockedAccounts.put(toAcc.getAccNumber(), accounts.get(toAcc.getAccNumber()));
+        accounts.remove(toAcc.getAccNumber());
     }
 }

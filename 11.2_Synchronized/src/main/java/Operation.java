@@ -10,10 +10,8 @@ public class Operation implements Runnable {
 
     @Override
     public void run() {
-        int randValue1 = ThreadLocalRandom.current().nextInt(1, 2999);
-        int randValue2 = randValue1 + 1;
-        String toAccount = "acc" + randValue1;
-        String fromAccount = "acc" + randValue2;
+        String toAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999));
+        String fromAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999) + 1);
 
 //        System.out.println(Thread.currentThread().getName());
 //        System.out.println(toAccount);

@@ -5,7 +5,7 @@ public class Main {
 
         ArrayList<Account> accountList = new ArrayList<>();
         for (int i = 1; i <= 3000; i++) {
-            accountList.add(new Account(100000, "acc" + i));
+            accountList.add(new Account(100000, Integer.toString(i)));
         }
 
         Bank bank = new Bank();
