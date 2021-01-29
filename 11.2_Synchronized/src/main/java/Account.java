@@ -1,11 +1,17 @@
-public class Account {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Account<number> {
 
     private long money;
     private String accNumber;
+    private boolean isBlock;
+    private static int number = 1;
 
-    public Account(long money, String accNumber) {
+    public Account(long money) {
         this.money = money;
-        this.accNumber = accNumber;
+        accNumber = Integer.toString(number);
+        number++;
+        isBlock = false;
     }
 
     public long getMoney() {
@@ -22,5 +28,13 @@ public class Account {
 
     public void setAccNumber(String accNumber) {
         this.accNumber = accNumber;
+    }
+
+    public boolean getIsBlock() {
+        return isBlock;
+    }
+
+    public void setIsBlock(boolean block) {
+        isBlock = block;
     }
 }

@@ -10,19 +10,14 @@ public class Operation implements Runnable {
 
     @Override
     public void run() {
-        String toAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999));
-        String fromAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999) + 1);
+        String fromAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999));
+        String toAccount = Integer.toString(ThreadLocalRandom.current().nextInt(1, 2999) + 1);
 
-//        System.out.println(Thread.currentThread().getName());
-//        System.out.println(toAccount);
-//        System.out.println(fromAccount);
+        bank.getAccounts().get(fromAccount);
+        bank.getAccounts().get(toAccount);
 
         long randTransferValue = getRandomTransferValue();
-        try {
-                bank.transfer(toAccount, fromAccount, randTransferValue);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        bank.transfer(bank.getAccounts().get(fromAccount), bank.getAccounts().get(toAccount), randTransferValue);
     }
 
     public static long getRandomTransferValue() {
