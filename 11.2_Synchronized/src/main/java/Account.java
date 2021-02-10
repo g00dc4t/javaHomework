@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Account<number> {
@@ -36,5 +37,18 @@ public class Account<number> {
 
     public void setIsBlock(boolean block) {
         isBlock = block;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account<?> account = (Account<?>) o;
+        return Objects.equals(accNumber, account.accNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accNumber);
     }
 }
