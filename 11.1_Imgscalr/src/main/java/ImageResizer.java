@@ -30,10 +30,10 @@ public class ImageResizer implements Runnable {
     @Override
     public void run() {
         try {
-            for(File file : files) {
+            for (File file : files) {
                 BufferedImage image = ImageIO.read(file);
                 System.out.println(image.getHeight() + " x " + image.getWidth() + " old");
-                if(image == null) {
+                if (image == null) {
                     continue;
                 }
 
