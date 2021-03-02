@@ -16,6 +16,7 @@ import java.util.concurrent.RecursiveTask;
 public class GetSiteMap extends RecursiveTask<List<String>> {
 
     private String siteUrl;
+    private List<String> pathsList = new LinkedList<>();
 
 
     public GetSiteMap(String siteUrl) {
@@ -24,7 +25,6 @@ public class GetSiteMap extends RecursiveTask<List<String>> {
 
     @Override
     protected List<String> compute() {
-        List<String> pathsList = new LinkedList<>();
         List<GetSiteMap> tasks = new LinkedList<>();
         try {
 //            Elements urlsElements = Jsoup.connect(siteUrl).get().select("a");
@@ -43,7 +43,7 @@ public class GetSiteMap extends RecursiveTask<List<String>> {
                     .forEach(element -> {
                         String path = element.absUrl("href");
                         if (path.contains(siteUrl) && !pathsList.contains(path)) {
-                            pathsList.add(path);
+                            addRightFormat(path);
                             GetSiteMap task = new GetSiteMap(path);
                             task.fork();
                             tasks.add(task);
@@ -62,7 +62,15 @@ public class GetSiteMap extends RecursiveTask<List<String>> {
         }
     }
 
-    public void getRightFormat() {
-
+    public void addRightFormat(String path) {
+        String rightString = ("\n" + "\t".repeat(path.split("/").length - 3) + path);
+        pathsList.add(rightString);
     }
+
+    public static void writeUrlInFile(String url, String fileName) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+        writer.append("\n" + "\t".repeat(url.split("/").length - 3) + url);
+        writer.close();
+    }
+
 }
