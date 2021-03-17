@@ -9,12 +9,6 @@ public class Storage {
     private static int currentId = 1;
     private static HashMap<Integer, Task> tasks = new HashMap<>();
 
-    public static ArrayList<Task> getAllTasks() {
-        ArrayList<Task> tasksList = new ArrayList<>();
-        tasksList.addAll(tasks.values());
-        return tasksList;
-    }
-
     public static int addTask(Task task) {
         int id = currentId++;
         task.setId(id);
@@ -22,10 +16,29 @@ public class Storage {
         return id;
     }
 
-    public static Task getTask(int taskId) {
-        if(tasks.containsKey(taskId)) {
-            return tasks.get(taskId);
+    public static Task getTask(int id) {
+        if(tasks.containsKey(id)) {
+            return tasks.get(id);
         }
         return null;
+    }
+
+    public static ArrayList<Task> getAllTasks() {
+        ArrayList<Task> tasksList = new ArrayList<>();
+        tasksList.addAll(tasks.values());
+        return tasksList;
+    }
+
+    public static Task updateTask(int id) {
+        Task task = tasks.get(id);
+        if (tasks.containsKey(id)) {
+            tasks.put(id, task);
+            return tasks.get(id);
+        }
+        return null;
+    }
+
+    public static void deleteTask(int id) {
+        tasks.remove(id);
     }
 }
