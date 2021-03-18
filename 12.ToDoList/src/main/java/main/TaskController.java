@@ -3,7 +3,7 @@ package main;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import response.Task;
+import main.model.Task;
 
 import java.util.List;
 
@@ -30,8 +30,12 @@ public class TaskController {
     }
 
     @PutMapping("/tasks/{id}")
-    public Task update(@PathVariable int id) {
-        return Storage.updateTask(id);
+    public ResponseEntity update(@PathVariable int id, Task newTask) {
+        Task task = Storage.updateTask(id, newTask);
+        if (task == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return new ResponseEntity(task, HttpStatus.OK);
     }
 
     @DeleteMapping("/tasks/{id}")

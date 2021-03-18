@@ -1,6 +1,6 @@
 package main;
 
-import response.Task;
+import main.model.Task;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class Storage {
     }
 
     public static Task getTask(int id) {
-        if(tasks.containsKey(id)) {
+        if (tasks.containsKey(id)) {
             return tasks.get(id);
         }
         return null;
@@ -29,10 +29,11 @@ public class Storage {
         return tasksList;
     }
 
-    public static Task updateTask(int id) {
-        Task task = tasks.get(id);
+    public static Task updateTask(int id, Task newTask) {
         if (tasks.containsKey(id)) {
-            tasks.put(id, task);
+            Task updateTask = tasks.get(id);
+            updateTask.setName(newTask.getName());
+            updateTask.setDate(newTask.getDate());
             return tasks.get(id);
         }
         return null;
