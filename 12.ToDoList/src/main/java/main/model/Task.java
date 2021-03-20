@@ -1,16 +1,25 @@
 package main.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    private int id;
     private String name;
-    private int date;
 
-    public int getId() {
+    private Integer date;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -22,11 +31,11 @@ public class Task {
         this.name = name;
     }
 
-    public int getDate() {
+    public Integer getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Integer date) {
         this.date = date;
     }
 }
