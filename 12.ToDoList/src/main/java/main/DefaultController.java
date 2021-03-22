@@ -23,8 +23,8 @@ public class DefaultController {
         for (Task task : taskIterable) {
             tasks.add(task);
         }
-        model.addAttribute("task", tasks);
-        model.addAttribute("taskCount", tasks.size());
+        model.addAttribute("tasks", tasks);
+        model.addAttribute("tasksCount", tasks.size());
         return "index";
     }
 }

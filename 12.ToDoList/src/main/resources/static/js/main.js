@@ -1,72 +1,88 @@
 $(function(){
 
-    const appendBook = function(data){
-        var bookCode = '<a href="#" class="book-link" data-id="' +
+    const appendTask = function(data){
+        var taskCode = '<a href="#" class="task-link" data-id="' +
             data.id + '">' + data.name + '</a><br>';
-        $('#book-list')
-            .append('<div>' + bookCode + '</div>');
+        $('#task-list')
+            .append('<div>' + taskCode + '</div>');
     };
 
-    //Loading books on load page
-//    $.get('/books/', function(response)
-//    {
-//        for(i in response) {
-//            appendBook(response[i]);
-//        }
-//    });
-
-    //Show adding book form
-    $('#show-add-book-form').click(function(){
-        $('#book-form').css('display', 'flex');
+    //Show adding task form
+    $('#show-add-task-form').click(function(){
+        $('#task-add').css('display', 'flex');
     });
 
-    //Closing adding book form
-    $('#book-form').click(function(event){
+    //Show updating task form
+    $('#show-update-task-form').click(function(){
+        $('#task-update').css('display', 'flex');
+    });
+
+    //Show deleting task form
+    $('#show-delete-task-form').click(function(){
+        $('#task-delete').css('display', 'flex');
+    });
+
+    //Closing adding task form
+    $('#task-add').click(function(event){
         if(event.target === this) {
             $(this).css('display', 'none');
         }
     });
 
-    //Getting book
-    $(document).on('click', '.book-link', function(){
+    //Closing updating task form
+    $('#task-update').click(function(event){
+        if(event.target === this) {
+            $(this).css('display', 'none');
+        }
+    });
+
+    //Closing adding task form
+    $('#task-delete').click(function(event){
+        if(event.target === this) {
+            $(this).css('display', 'none');
+        }
+    });
+
+    //Getting task
+    $(document).on('click', '.task-link', function(){
         var link = $(this);
-        var bookId = link.data('id');
+        var taskId = link.data('id');
         $.ajax({
             method: "GET",
-            url: '/books/' + bookId,
+            url: '/tasks/' + taskId,
             success: function(response)
             {
-                var code = '<span>Год выпуска:' + response.year + '</span>';
+                var code = '<span>Дата создания:' + response.date + '</span>';
                 link.parent().append(code);
             },
             error: function(response)
             {
                 if(response.status == 404) {
-                    alert('Книга не найдена!');
+                    alert('Задача не найдена!');
                 }
             }
         });
         return false;
     });
 
-    //Adding book
-    $('#save-book').click(function()
+    //Adding task
+    $('#save-task').click(function()
     {
-        var data = $('#book-form form').serialize();
+        var data = $('#task-add form').serialize();
         $.ajax({
             method: "POST",
-            url: '/books/',
+            url: '/tasks/',
             data: data,
             success: function(response)
             {
-                $('#book-form').css('display', 'none');
-                var book = {};
-                book.id = response;
-                var dataArray = $('#book-form form').serializeArray();
+                $('#task-add').css('display', 'none');
+                var task = {};
+                task.id = response;
+                var dataArray = $('#task-add form').serializeArray();
                 for(i in dataArray) {
-                    book[dataArray[i]['name']] = dataArray[i]['value'];
+                    task[dataArray[i]['name']] = dataArray[i]['value'];
                 }
-                appendBook(book);
+                appendTask(task);
             }
         });
         return false;

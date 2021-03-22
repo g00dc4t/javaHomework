@@ -2,7 +2,7 @@
     font-family: Arial;
 }
 
-#book-form {
+#task-add {
     display: none;
     align-items: center;
     justify-content: center;
@@ -15,22 +15,86 @@
     background-color: #88888878;
 }
 
-#book-form form {
+#task-add form {
     background-color: white;
     border: 1px solid #333;
     width: 300px;
     padding: 20px;
 }
 
-#book-form h2 {
+#task-add h2 {
     margin-top: 0;
 }
 
-#book-form label {
+#task-add label {
     display: block;
 }
 
-#book-form form > * {
+#task-add form > * {
+    margin-bottom: 5px;
+}
+
+#task-update {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #88888878;
+}
+
+#task-update form {
+    background-color: white;
+    border: 1px solid #333;
+    width: 300px;
+    padding: 20px;
+}
+
+#task-update h2 {
+    margin-top: 0;
+}
+
+#task-update label {
+    display: block;
+}
+
+#task-update form > * {
+    margin-bottom: 5px;
+}
+
+#task-delete {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #88888878;
+}
+
+#task-delete form {
+    background-color: white;
+    border: 1px solid #333;
+    width: 300px;
+    padding: 20px;
+}
+
+#task-delete h2 {
+    margin-top: 0;
+}
+
+#task-delete label {
+    display: block;
+}
+
+#task-delete form > * {
     margin-bottom: 5px;
 }
 
