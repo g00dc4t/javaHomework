@@ -18,15 +18,8 @@ public class User {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public double getRegDate() {
         return regDate;
     }
 
-    public void setRegDate(double regDate) {
-        this.regDate = regDate;
-    }
 }

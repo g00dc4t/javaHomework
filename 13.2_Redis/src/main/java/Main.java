@@ -22,32 +22,31 @@ public class Main {
             redisStorage.addUser(new User());
         }
 
-        redisStorage.listKeys();
-
-        redisStorage.shutdown();
-
-//        for (User client : storage.getUserStorage().values()) {
-//            int clientId = getRandomTenthUser(storage.getUserStorage().size());
-//            if(clientId == 0) {
-//            } else {
-//                System.out.println("> Пользователь " + storage.getUserStorage().get(clientId).getId()
-//                        + " оплатил услугу");
-//                System.out.println("- На главной странице показываем пользователя "
-//                        + storage.getUserStorage().get(clientId).getId());
-//                Thread.sleep(SLEEP);
-//            }
-//            System.out.println("- На главной странице показываем пользователя " + client.getId());
-//        }
+        while (true) {
+            for (String userId : redisStorage.getSetValues()) {
+                showAtMainPage(userId);
+                if (paidOrNot() != 0) {
+                    String randId = String.valueOf(getRandomUserIdFromUsersCount(COUNT_USERS));
+                    servicePaid(randId);
+                    showAtMainPage(randId);
+                    redisStorage.updateEnterTime(Integer.valueOf(randId));
+                    Thread.sleep(SLEEP);
+                }
+            }
+        }
     }
 
-    public static int getRandomTenthUser(int countUsers) {
+    public static void showAtMainPage(String userId) {
+        System.out.println("— На главной странице показываем пользователя " + userId);
+    }
+
+    public static void servicePaid(String userId) {
+        System.out.println("> Пользователь " + userId + " оплатил услугу ");
+    }
+
+    public static int paidOrNot() {
         random = new Random();
-        int everyTenthClient = (random.nextInt(100) < 10) ? 1 : 0;
-        int randClient = 0;
-        if (everyTenthClient == 1) {
-            randClient = getRandomUserIdFromUsersCount(countUsers);
-        }
-        return randClient;
+        return (random.nextInt(100) < 10) ? 1 : 0;
     }
 
     public static int getRandomUserIdFromUsersCount(int usersCount) {

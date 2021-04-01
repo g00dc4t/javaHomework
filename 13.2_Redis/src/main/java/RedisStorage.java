@@ -29,18 +29,16 @@ public class RedisStorage {
         redissonClient.shutdown();
     }
 
-    public void listKeys() {
-        Iterable<String> keys = rKeys.getKeys();
-        for (String key : keys) {
-            System.out.println("KEY: " + key + ", type:" + rKeys.getType(key));
-        }
+    public RScoredSortedSet<String> getSetValues() {
+        RScoredSortedSet<String> valuesSet = redissonClient.getScoredSortedSet(KEY);
+        return valuesSet;
     }
 
     public void addUser(User user) {
         users.add(user.getRegDate(), String.valueOf(user.getId()));
     }
 
-    public void updateEnterTime(User user) {
-        users.add(new Date().getTime(), String.valueOf(user.getId()));
+    public void updateEnterTime(int userId) {
+        users.add(new Date().getTime(), String.valueOf(userId));
     }
 }
