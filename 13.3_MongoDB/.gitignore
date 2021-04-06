@@ -1,0 +1,7 @@
+.idea/
+logs/
+target/
+out/
+data/
+*.iml
+1_mongodbQuery
