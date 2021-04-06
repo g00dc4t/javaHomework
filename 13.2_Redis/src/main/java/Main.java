@@ -3,8 +3,6 @@ import java.util.Random;
 
 public class Main {
 
-    private static User user;
-
     private static Random random;
 
     private static final int COUNT_USERS = 20;

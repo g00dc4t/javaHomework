@@ -1,0 +1,13 @@
+db.books.insert(
+   [
+     { name: "bookone", author: "one", year: 1},
+     { name: "booktwo", author: "one", year: 2},
+     { name: "bookthree", author: "two", year: 3},
+     { name: "bookfour", author: "three", year: 4},
+     { name: "bookfive", author: "four", year: 5}
+   ]
+)
+
+db.books.find({ author: "one" })
+db.books.find().sort({ year: -1 }).limit(1)
+
